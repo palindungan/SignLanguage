@@ -1,0 +1,34 @@
+conda env create -v -f tensorflow.yml -----(membuat virtual environment dan menginstal library sesuai yml file)
+python -m ipykernel install --user --name tensorflow --display-name "Python 3.7 (tensorflow)" ----->(mendaftarkan environment ke dalam jupyter)
+
+-----
+
+command :
+conda update conda
+conda create --name prototype_v1
+conda info --envs
+conda list
+conda activate prototype_v1
+conda env remove -n prototype_v1
+
+python -m ipykernel install --user --name prototype_v1 --display-name "Python 3.7 (prototype_v1)" 
+
+
+jupyter kernelspec list
+jupyter kernelspec uninstall prototype_v1
+
+-----
+
+requirement :
+pip install --upgrade pip
+conda install tensorflow
+conda install -c anaconda joblib
+conda install -c anaconda keras
+pip install keras_squeezenet
+conda install -c conda-forge mock
+conda install -c conda-forge opencv
+conda install -c anaconda scikit-learn
+
+
+//// 
+pythonTensorflow1
