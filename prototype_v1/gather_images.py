@@ -25,20 +25,18 @@ except:
     print(desc)
     exit(-1)  # terjadi kesalahan/error/masalah yang membuat program exit/keluar
 
-IMG_SAVE_PATH = 'image_data'
-IMG_CLASS_PATH = os.path.join(IMG_SAVE_PATH, label_name)
+IMG_SAVE_PATH = 'image_data'  # lokasi absolute path --> home untuk semua dataset
+IMG_CLASS_PATH = os.path.join(IMG_SAVE_PATH, label_name)  # lokasi tempat data gambar hasil program disimpan
 
-'''
-IMG_SAVE_PATH = 'image_data'
-IMG_CLASS_PATH = os.path.join(IMG_SAVE_PATH, label_name)
-
+# proses + validasi ketika membuat folder untuk dataset yang berhasil disimpan
 try:
     os.mkdir(IMG_SAVE_PATH)
 except FileExistsError:
     pass
+
 try:
     os.mkdir(IMG_CLASS_PATH)
 except FileExistsError:
-    print("{} directory already exists.".format(IMG_CLASS_PATH))
-    print("All images gathered will be saved along with existing items in this folder")
-'''
+    print('{} directory already exists.'.format(IMG_CLASS_PATH))
+    print('All images gathered will be saved along with existing items in this folder')
+
