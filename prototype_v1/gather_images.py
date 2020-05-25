@@ -7,7 +7,7 @@ Cara Running : - python gather_images.py <nama_label> <jumlah_sampel>
 
 *hanya sebagian gambar yang berada didalam kotak yang akan disimpan
 
-*tekan 'a' untuk memulai/pause proses mengambilan data gambar
+*tekan 'a' untuk memulai/berhenti proses mengambilan data gambar
 *tekan 'q' untuk keluar dari proses mengambilan data gambar
 '''
 
@@ -70,10 +70,13 @@ while cap.isOpened():
 
     cv2.imshow("Collecting Images", frame)  # menampilkan gambar/frame kedalam layar
 
-    # validasi untuk memulai/mempause/keluar dari pemrosesan dataset
+    # validasi untuk memulai/berhenti/keluar dari pemrosesan dataset
     k = cv2.waitKey(10)
     if k == ord('a'):
         start = not start  # mengubah nilai boolean start menjadi sebaliknya ->True/False
     elif k == ord('q'):
         break  # keluar dari proses perulangan
-    
+
+print('\n{} image(s) saved to {}'.format(count, IMG_CLASS_PATH))
+cap.release()
+cv2.destroyAllWindows()
