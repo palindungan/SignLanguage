@@ -94,7 +94,7 @@ class ImageProcessing:
 
             # validasi proses pengambilan dataset
             if start:
-                self.image_manipulation(frame, count) # proses memanipulasi gambar
+                self.image_manipulation(frame, count)  # proses memanipulasi gambar
                 count += 1
 
             # menambah text pada gambar/frame
