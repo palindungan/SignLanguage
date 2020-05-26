@@ -148,7 +148,7 @@ while cap.isOpened():
         cv.imshow('dilation', dilation)
         cv.imshow('erosion', erosion)
         cv.imshow("Thresholded", thresh)
-        # all_image = np.hstack((drawing, crop_image))
+        all_image = np.hstack((drawing, crop_image))
         cv.imshow('Contours', drawing)
 
         key = cv.waitKey(1) & 0xff
