@@ -51,11 +51,11 @@ class ImageProcessing:
         upper_s = cv2.getTrackbarPos('US', self.window_name_tracking)  # mendapatkan posisi trackbar
         upper_v = cv2.getTrackbarPos('UV', self.window_name_tracking)  # mendapatkan posisi trackbar
 
-        # define range of skin color in HSV
+        # mendefinisikan range dari warna kulit dalam hsv
         lower_skin = np.array([lower_h, lower_s, lower_v], dtype=np.uint8)
         upper_skin = np.array([upper_h, upper_s, upper_v], dtype=np.uint8)
 
-        # extract skin colur image
+        # ekstraksi warna kulit pada gambar
         mask = cv2.inRange(hsv, lower_skin, upper_skin)
 
         # # extrapolate the hand to fill dark spots within
@@ -64,11 +64,11 @@ class ImageProcessing:
         #
         # # blur the image
         # mask = cv2.GaussianBlur(mask, (5, 5), 100)
-
-        res = cv2.bitwise_and(roi, roi, mask=mask)  # hasil akhir operasi gambar dengan mask
+        #
+        # res = cv2.bitwise_and(roi, roi, mask=mask)  # hasil akhir operasi gambar dengan mask
 
         cv2.imshow('mask', mask)
-        cv2.imshow('res', res)
+        # cv2.imshow('res', res)
 
         # save_path = os.path.join(self.IMG_CLASS_PATH, '{}.jpg'.format(count + 1))
         # cv2.imwrite(save_path, roi)  # menyimpan file dataset satu persatu
