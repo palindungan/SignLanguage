@@ -21,7 +21,7 @@ class ImageProcessing:
     def __init__(self, num_samples, IMG_CLASS_PATH):
         self.num_samples = num_samples
         self.IMG_CLASS_PATH = IMG_CLASS_PATH
-        self.window_name_tracking = 'Tracking'
+        self.window_name_tracking = 'Tracking Warna Kulit'
 
     def nothing(self, x):
         pass
@@ -52,11 +52,11 @@ class ImageProcessing:
         #
         # # blur the image
         # mask = cv2.GaussianBlur(mask, (5, 5), 100)
-        #
-        # res = cv2.bitwise_and(roi, roi, mask=mask)  # hasil akhir operasi gambar dengan mask
+
+        res = cv2.bitwise_and(roi, roi, mask=mask)  # hasil akhir operasi gambar dengan mask
 
         cv2.imshow('mask', mask)
-        # cv2.imshow('res', res)
+        cv2.imshow('res', res)
 
         # save_path = os.path.join(self.IMG_CLASS_PATH, '{}.jpg'.format(count + 1))
         # cv2.imwrite(save_path, roi)  # menyimpan file dataset satu persatu
@@ -72,10 +72,10 @@ class ImageProcessing:
         cv2.namedWindow(self.window_name_tracking)  # membuat window dengan nama
 
         cv2.createTrackbar('LH', self.window_name_tracking, 0, 255, self.nothing)  # membuat trackbar
-        cv2.createTrackbar('LS', self.window_name_tracking, 0, 255, self.nothing)  # membuat trackbar
+        cv2.createTrackbar('LS', self.window_name_tracking, 61, 255, self.nothing)  # membuat trackbar
         cv2.createTrackbar('LV', self.window_name_tracking, 0, 255, self.nothing)  # membuat trackbar
 
-        cv2.createTrackbar('UH', self.window_name_tracking, 255, 255, self.nothing)  # membuat trackbar
+        cv2.createTrackbar('UH', self.window_name_tracking, 73, 255, self.nothing)  # membuat trackbar
         cv2.createTrackbar('US', self.window_name_tracking, 255, 255, self.nothing)  # membuat trackbar
         cv2.createTrackbar('UV', self.window_name_tracking, 255, 255, self.nothing)  # membuat trackbar
 
@@ -94,7 +94,7 @@ class ImageProcessing:
 
             # validasi proses pengambilan dataset
             if start:
-                self.image_manipulation(frame, count)
+                self.image_manipulation(frame, count) # proses memanipulasi gambar
                 count += 1
 
             # menambah text pada gambar/frame
