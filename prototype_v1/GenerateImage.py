@@ -28,6 +28,9 @@ class ImageProcessing:
 
     def video_capture(self):
         cap = cv2.VideoCapture(0)  # membuka camera
+        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1208)  # mengatur sebuah properti video (video_width)
+        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)  # mengatur sebuah properti video (video_height)
+
         start = False
         count = 0
 
