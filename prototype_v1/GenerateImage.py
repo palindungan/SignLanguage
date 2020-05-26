@@ -23,7 +23,6 @@ class ImageProcessing:
 
     def image_manipulation(self, frame, count):
         roi = frame[100:500, 100:500]  # img[y:y+h, x:x+w]
-        print('berhasil')
         # save_path = os.path.join(self.IMG_CLASS_PATH, '{}.jpg'.format(count + 1))
         # cv2.imwrite(save_path, roi)  # menyimpan file dataset satu persatu
 
@@ -99,5 +98,5 @@ def main():
     IP.video_capture()
 
 
-# call main method
+# memanggil main method
 main()
