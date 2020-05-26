@@ -58,8 +58,8 @@ class ImageProcessing:
         cv2.imshow('mask', mask)
         cv2.imshow('res', res)
 
-        # save_path = os.path.join(self.IMG_CLASS_PATH, '{}.jpg'.format(count + 1))
-        # cv2.imwrite(save_path, roi)  # menyimpan file dataset satu persatu
+        save_path = os.path.join(self.IMG_CLASS_PATH, '{}.jpg'.format(count + 1))
+        cv2.imwrite(save_path, res)  # menyimpan file dataset satu persatu
 
     def video_capture(self):
         cap = cv2.VideoCapture(0)  # membuka camera
@@ -87,8 +87,8 @@ class ImageProcessing:
                 continue  # semua proses akan melewati(skip) dan kembali ke perulangan selanjutnya
 
             # validasi jika jumlah dataset sudah memenuhi kriteria yang diinginkan
-            # if count == self.num_samples:
-            #     break  # keluar dari proses perulangan
+            if count == self.num_samples:
+                break  # keluar dari proses perulangan
 
             cv2.rectangle(frame, (100, 100), (500, 500), (255, 255, 255), 2)  # membuat bangun segi empat pada frame
 
