@@ -26,18 +26,6 @@ class ImageProcessing:
     def nothing(self, x):
         pass
 
-    def hsv_boundary_tracker(self):
-
-        cv2.namedWindow(self.window_name_tracking)  # membuat window dengan nama
-
-        cv2.createTrackbar('LH', self.window_name_tracking, 0, 255, self.nothing)  # membuat trackbar
-        cv2.createTrackbar('LS', self.window_name_tracking, 0, 255, self.nothing)  # membuat trackbar
-        cv2.createTrackbar('LV', self.window_name_tracking, 0, 255, self.nothing)  # membuat trackbar
-
-        cv2.createTrackbar('UH', self.window_name_tracking, 255, 255, self.nothing)  # membuat trackbar
-        cv2.createTrackbar('US', self.window_name_tracking, 255, 255, self.nothing)  # membuat trackbar
-        cv2.createTrackbar('UV', self.window_name_tracking, 255, 255, self.nothing)  # membuat trackbar
-
     def image_manipulation(self, frame, count):
         roi = frame[100:500, 100:500]  # img[y:y+h, x:x+w] --> crop image
 
@@ -81,7 +69,15 @@ class ImageProcessing:
         start = False
         count = 0
 
-        self.hsv_boundary_tracker()
+        cv2.namedWindow(self.window_name_tracking)  # membuat window dengan nama
+
+        cv2.createTrackbar('LH', self.window_name_tracking, 0, 255, self.nothing)  # membuat trackbar
+        cv2.createTrackbar('LS', self.window_name_tracking, 0, 255, self.nothing)  # membuat trackbar
+        cv2.createTrackbar('LV', self.window_name_tracking, 0, 255, self.nothing)  # membuat trackbar
+
+        cv2.createTrackbar('UH', self.window_name_tracking, 255, 255, self.nothing)  # membuat trackbar
+        cv2.createTrackbar('US', self.window_name_tracking, 255, 255, self.nothing)  # membuat trackbar
+        cv2.createTrackbar('UV', self.window_name_tracking, 255, 255, self.nothing)  # membuat trackbar
 
         while cap.isOpened():
             ret, frame = cap.read()
