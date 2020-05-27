@@ -14,7 +14,7 @@ Cara Running : - python gather_images.py <nama_label> <jumlah_sampel>
 import cv2  # image processing
 import os  # memanipulasi operating system
 import sys  # menangkap arguments/parse
-import numpy as np
+import numpy as np # array operation
 
 
 class ImageProcessing:
