@@ -1,0 +1,14 @@
+https://www.who.int/news-room/fact-sheets/detail/deafness-and-hearing-loss
+https://www.ypedulikasihabk.org/2018/11/09/mengenal-bahasa-isyarat/
+
+hal baru yang bisa ditawarkan :
+1. dinamis translate
+2. multi kamera
+3. menggunakan glove dengan warna khusus
+
+. motion sensing (microsoft kinect)
+. posisi objek wajah dan objek yang lain
+. dinamis
+
+
+Therefore, the user only needs to stand in front of the camera without wearing any kind of sensor.
