@@ -84,7 +84,7 @@ class ImageProcessing:
 
             # validasi jika gagal mengambil gambar/frame
             if not ret:
-                continue  # semua proses akan melewati(skip) dan kembali ke perulangan selanjutnya
+                continue  # semua proses dibawahnya akan dilewati(skip) dan kembali ke perulangan selanjutnya
 
             # validasi jika jumlah dataset sudah memenuhi kriteria yang diinginkan
             if count == self.num_samples:
