@@ -50,7 +50,7 @@ for directory in os.listdir(IMG_SAVE_PATH):  # melakukan perulangan sebanyak lis
         img = cv2.imread(os.path.join(path, item))  # membaca file dengan lokasi setiap item
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # mengubah format warna dari BGR ke RGB
         img = cv2.resize(img, (227, 227))  # mengatur ukuran gambar lebar * tinggi
-        dataset.append(img, directory)  # menambah urutan array berupa [[[array1] , 'label1'], [[array2] , 'label2']]
+        dataset.append([img, directory])  # menambah urutan array berupa [[[array1] , 'label1'], [[array2] , 'label2']]
 
 '''
 dataset = [
