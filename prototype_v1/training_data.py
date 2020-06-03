@@ -85,4 +85,4 @@ model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=['accur
 model.fit(np.array(data), np.array(labels), epochs=10)
 
 # menyimpan hasil training data menjadi model untuk digunakan selanjutnya
-model.save('modelSignLanguageV1')
+model.save('modelSignLanguageV1.h5')
