@@ -99,7 +99,7 @@ def video_capture():
 
         # menambah text pada gambar/frame
         font = cv2.FONT_HERSHEY_SIMPLEX
-        cv2.putText(frame, 'prediksi : {} dataset'.format('hasil'), (0, 50), font, 0.7, (0, 255, 255), 2,
+        cv2.putText(frame, 'prediksi : {}'.format('hasil'), (0, 50), font, 0.7, (0, 255, 255), 2,
                     cv2.LINE_AA)
 
         cv2.imshow("Frame Utama", frame)  # menampilkan gambar/frame kedalam layar
