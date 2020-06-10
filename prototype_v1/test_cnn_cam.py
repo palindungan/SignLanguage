@@ -61,10 +61,11 @@ def image_manipulation(frame):
     move_code = np.argmax(pred[0])
     move_name = mapper(move_code)
 
-    print('prediksi : {}'.format(move_name))
-
     cv2.imshow('mask', mask)
     cv2.imshow('res', res)
+
+    # print('prediksi : {}'.format(move_name))
+    return move_name
 
 
 def video_capture():
@@ -84,6 +85,8 @@ def video_capture():
     cv2.createTrackbar('US', window_name_tracking, 255, 255, nothing)  # membuat trackbar
     cv2.createTrackbar('UV', window_name_tracking, 255, 255, nothing)  # membuat trackbar
 
+    prediction_result = 'Kosong'
+
     while cap.isOpened():
         ret, frame = cap.read()
 
@@ -95,11 +98,11 @@ def video_capture():
 
         # validasi proses pengambilan dataset
         if start:
-            image_manipulation(frame)  # proses memanipulasi gambar
+            prediction_result = image_manipulation(frame)  # proses memanipulasi gambar
 
         # menambah text pada gambar/frame
         font = cv2.FONT_HERSHEY_SIMPLEX
-        cv2.putText(frame, 'prediksi : {}'.format('hasil'), (0, 50), font, 0.7, (0, 255, 255), 2,
+        cv2.putText(frame, 'prediksi : {}'.format(prediction_result), (0, 50), font, 0.7, (0, 255, 255), 2,
                     cv2.LINE_AA)
 
         cv2.imshow("Frame Utama", frame)  # menampilkan gambar/frame kedalam layar
