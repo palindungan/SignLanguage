@@ -473,6 +473,24 @@
 					"name": "Hasil dan Analisis Penelitian"
 				}
 			]
+		},
+		{
+			"_type": "FCFlowchart",
+			"_id": "AAAAAAFyvUH2t8S946I=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "Flowchart2",
+			"ownedElements": [
+				{
+					"_type": "FCFlowchartDiagram",
+					"_id": "AAAAAAFyvUH2t8S+J1Y=",
+					"_parent": {
+						"$ref": "AAAAAAFyvUH2t8S946I="
+					},
+					"name": "FlowchartDiagram1"
+				}
+			]
 		}
 	]
 }
