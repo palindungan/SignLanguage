@@ -61,10 +61,11 @@ def image_manipulation(frame):
     move_code = np.argmax(pred[0])
     move_name = mapper(move_code)
 
+
     cv2.imshow('mask', mask)
     cv2.imshow('res', res)
 
-    # print('prediksi : {}'.format(move_name))
+    print('prediksi : {}'.format(move_name))
     return move_name
 
 
